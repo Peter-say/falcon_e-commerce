@@ -25,7 +25,7 @@ Route::prefix('shop')->as('shop.')->group(function () {
   });
 
 
-  Route::get('/cart', [CartController::class, 'cartList'])->name('cart.cartList');
+  Route::get('/cart', [CartController::class, 'shoppingCart'])->name('cart');
 });
 
 

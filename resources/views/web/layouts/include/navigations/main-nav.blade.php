@@ -2968,7 +2968,7 @@
 
         <li class="nav-item d-none d-sm-block">
             <a class="nav-link px-0 notification-indicator notification-indicator-warning notification-indicator-fill fa-icon-wait"
-                href="../shopping-cart.html"><span class="fas fa-shopping-cart" data-fa-transform="shrink-7"
+                href="{{route('shop.cart')}}"><span class="fas fa-shopping-cart" data-fa-transform="shrink-7"
                     style="font-size: 33px;"></span><span
                     class="notification-indicator-number">{{ $cartItemCount }}</span></a>
         </li>

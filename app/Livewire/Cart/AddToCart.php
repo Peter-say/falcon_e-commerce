@@ -91,7 +91,7 @@ class AddToCart extends Component
     
         $this->resetInput(); // Reset the input field
     
-        $this->emitTo('cart-count', 'cartUpdated');
+        // $this->emit('cart-count', 'cartUpdated');
     
         session()->flash('success_message', 'Item added to cart successfully');
     }

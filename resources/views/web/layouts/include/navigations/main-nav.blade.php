@@ -423,7 +423,8 @@
                                                 <div class="avatar avatar-2xl">
                                                     <div
                                                         class="avatar-name rounded-circle bg-primary-subtle text-primary">
-                                                        <span class="fs-2">E</span></div>
+                                                        <span class="fs-2">E</span>
+                                                    </div>
                                                 </div>
                                                 <p class="mb-0 fw-medium text-800 text-truncate fs--2">Events</p>
                                             </a></div>
@@ -2968,7 +2969,7 @@
 
         <li class="nav-item d-none d-sm-block">
             <a class="nav-link px-0 notification-indicator notification-indicator-warning notification-indicator-fill fa-icon-wait"
-                href="{{route('shop.cart')}}"><span class="fas fa-shopping-cart" data-fa-transform="shrink-7"
+                href="{{ route('shop.cart') }}"><span class="fas fa-shopping-cart" data-fa-transform="shrink-7"
                     style="font-size: 33px;"></span><span
                     class="notification-indicator-number">{{ $cartItemCount }}</span></a>
         </li>
@@ -3237,7 +3238,8 @@
                                         href="../../events/event-detail.html" target="_blank">
                                         <div class="avatar avatar-2xl">
                                             <div class="avatar-name rounded-circle bg-primary-subtle text-primary">
-                                                <span class="fs-2">E</span></div>
+                                                <span class="fs-2">E</span>
+                                            </div>
                                         </div>
                                         <p class="mb-0 fw-medium text-800 text-truncate fs--2">Events</p>
                                     </a></div>
@@ -3266,7 +3268,14 @@
                     <a class="dropdown-item" href="#!">Feedback</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="../../../pages/user/settings.html">Settings</a>
-                    <a class="dropdown-item" href="../../../pages/authentication/card/logout.html">Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </li>

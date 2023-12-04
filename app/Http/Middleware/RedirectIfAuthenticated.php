@@ -21,6 +21,11 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                // Check if there's a checkout page in the session
+                if ($checkoutPage = session('checkout_page')) {
+                    // If so, redirect to the checkout page
+                    return $checkoutPage;
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

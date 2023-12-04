@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
           'last_name' => 'Admin',
           'email' => 'admin@gmail.com',
           'role' => 'Admin',
-          'avatar' => null,
+          'profile_photo_path' => null,
           'email_verified_at' => now(),
           'password' => Hash::make('password'),
           'remember_token' => Str::random(10),

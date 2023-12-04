@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('mark_as_default')->default(1);
+            $table->boolean('is_default')->default(true);
             $table->string('address');
             $table->string('country');
             $table->string('state');

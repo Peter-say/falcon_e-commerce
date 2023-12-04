@@ -40,7 +40,8 @@
                                         <div class="swiper-wrapper">
                                             @forelse (json_decode($product->images) as $imagePath)
                                                 <div class="swiper-slide">
-                                                    <a class="d-block" href="{{route('shop.product.details', $product->slug)}}">
+                                                    <a class="d-block"
+                                                        href="{{ route('shop.product.details', $product->slug) }}">
                                                         <img class="rounded-top img-fluid"
                                                             src="{{ asset('product/images/' . $imagePath) }}"
                                                             alt="product image" />
@@ -49,7 +50,8 @@
                                             @empty
                                                 {{-- Display a placeholder image or message when no images are available --}}
                                                 <div class="swiper-slide">
-                                                    <a class="d-block" href="{{route('shop.product.details', $product->slug)}}">
+                                                    <a class="d-block"
+                                                        href="{{ route('shop.product.details', $product->slug) }}">
                                                         <img class="rounded-top img-fluid"
                                                             src="{{ asset('path/to/placeholder-image.jpg') }}"
                                                             alt="placeholder image" />
@@ -67,13 +69,17 @@
                                         class="badge rounded-pill bg-success position-absolute mt-2 me-2 z-2 top-0 end-0">New</span>
                                 </div>
                                 <div class="p-3">
-                                    <h5 class="fs-0"><a class="text-dark" href="{{route('shop.product.details', $product->slug)}}">{{$product->name}}
-                                            </a></h5>
-                                    <p class="fs--1 mb-3"><a class="text-500" href="#!">{{$product->category->name}}</a>
+                                    <h5 class="fs-0"><a class="text-dark"
+                                            href="{{ route('shop.product.details', $product->slug) }}">{{ $product->name }}
+                                        </a></h5>
+                                    <p class="fs--1 mb-3"><a class="text-500"
+                                            href="#!">{{ $product->category->name }}</a>
                                     </p>
-                                    <h5 class="fs-md-2 text-warning mb-0 d-flex align-items-center mb-3">${{$product->amount}}</h5>
+                                    <h5 class="fs-md-2 text-warning mb-0 d-flex align-items-center mb-3">
+                                        ${{ $product->amount }}</h5>
                                     <p class="fs--1 mb-1">Shipping Cost: <strong>$65</strong></p>
-                                    <p class="fs--1 mb-1">Stock: <strong class="text-danger">{{$product->stock_status}}</strong></p>
+                                    <p class="fs--1 mb-1">Stock: <strong
+                                            class="text-danger">{{ $product->stock_status }}</strong></p>
                                 </div>
                             </div>
                             <div class="d-flex flex-between-center px-3">
@@ -85,9 +91,9 @@
                                         class="ms-1">(20)</span></div>
                                 <div><a class="btn btn-sm btn-falcon-default me-2" href="#!" data-bs-toggle="tooltip"
                                         data-bs-placement="top" title="Add to Wish List"><span
-                                            class="far fa-heart"></span></a><a class="btn btn-sm btn-falcon-default"
-                                        href="#!" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Add to Cart"><span class="fas fa-cart-plus"></span></a></div>
+                                            class="far fa-heart"></span></a>
+                                    @livewire('cart.general-cart')
+                                </div>
                             </div>
                         </div>
                     </div>
